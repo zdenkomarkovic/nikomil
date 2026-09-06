@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ─── Dizajn tokeni (Tailwind v4) ──────────────────────────────────────────── */
+@theme {
+  --color-ink: #1b1e21;
+  --color-ink-soft: #2b3036;
+  --color-ink-muted: #5c6167;
+  --color-paper: #f6f4f0;
+  --color-paper-dim: #edeae3;
+  --color-line: #ddd8cf;
+  --color-moss: #4a7a4a;
+  --color-moss-dark: #3a6139;
+  --color-moss-tint: #eef3ec;
+  --color-ember: #b26a3c;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), var(--font-inter), ui-sans-serif, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(20, 22, 24, 0.04), 0 12px 32px -12px rgba(20, 22, 24, 0.18);
+  --shadow-lift: 0 2px 6px rgba(20, 22, 24, 0.06), 0 30px 60px -24px rgba(20, 22, 24, 0.28);
+}
+
+/* ─── Osnova ───────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-moss);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ─── Pomoćne klase ────────────────────────────────────────────────────────── */
+@layer components {
+  .u-container {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .u-prose p + p {
+    margin-top: 1rem;
+  }
+
+  .u-prose li {
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-container {
+    padding-inline: 2rem;
+  }
+}
+
+/* Suptilna animacija pojavljivanja */
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.u-reveal {
+  animation: fade-rise 0.6s ease both;
+}
+
+/* ─── Boja teksta na linkovima ─────────────────────────────────────────────── */
+/* Tailwind preflight postavlja `a { color: inherit }` sa prioritetom koji u ovom
+   build-u nadjačava utility klase za boju (npr. text-paper na <a>). Ova pravila
+   van slojeva, sa specifičnošću a + [class], vraćaju očekivano ponašanje. */
+a[class~="text-ink"] {
+  color: var(--color-ink);
+}
+a[class~="text-ink-muted"] {
+  color: var(--color-ink-muted);
+}
+a[class~="text-paper"] {
+  color: var(--color-paper);
+}
+a[class~="text-moss"] {
+  color: var(--color-moss);
+}
+a[class~="text-moss-dark"] {
+  color: var(--color-moss-dark);
+}
+a[class~="hover:text-ink"]:hover {
+  color: var(--color-ink);
+}
+a[class~="hover:text-paper"]:hover {
+  color: var(--color-paper);
+}
+a[class~="hover:text-moss"]:hover {
+  color: var(--color-moss);
+}
+a[class~="hover:text-moss-dark"]:hover {
+  color: var(--color-moss-dark);
+}
