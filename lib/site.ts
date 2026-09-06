@@ -4,6 +4,7 @@
 export type NavItem = { label: string; href: string };
 
 export const NAV: NavItem[] = [
+  { label: "Početna", href: "/" },
   { label: "Žardinjere", href: "/#zardinjere" },
   { label: "Ostali proizvodi", href: "/#ostali-proizvodi" },
   { label: "Galerija", href: "/galerija" },

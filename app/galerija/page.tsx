@@ -20,17 +20,29 @@ const galleryLd = {
   "@type": "ImageGallery",
   name: "Galerija — NIKOMIL metalne žardinjere",
   url: `${SITE_URL}${PATH}`,
-  image: GALLERY.slice(0, 12).map((g) => ({
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#business` },
+  image: GALLERY.slice(0, 24).map((g) => ({
     "@type": "ImageObject",
     contentUrl: `${SITE_URL}${g.src}`,
     caption: g.alt,
   })),
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Početna", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Galerija", item: `${SITE_URL}${PATH}` },
+  ],
+};
+
 export default function GalerijaPage() {
   return (
     <>
       <JsonLd data={galleryLd} />
+      <JsonLd data={breadcrumbLd} />
 
       <PageHeader
         eyebrow="Realizovani projekti"

@@ -22,6 +22,16 @@ const breadcrumbLd = {
   ],
 };
 
+const contactLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": `${SITE_URL}${PATH}`,
+  url: `${SITE_URL}${PATH}`,
+  name: "Kontakt — NIKOMIL",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#business` },
+};
+
 const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(
   `${CONTACT.street}, ${CONTACT.area}, ${CONTACT.city}`
 )}&output=embed`;
@@ -30,6 +40,7 @@ export default function KontaktPage() {
   return (
     <>
       <JsonLd data={breadcrumbLd} />
+      <JsonLd data={contactLd} />
 
       <PageHeader
         eyebrow="Javite se"

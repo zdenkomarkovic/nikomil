@@ -19,6 +19,8 @@ const archivo = Archivo({
   display: "swap",
 });
 
+const GOOGLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -26,6 +28,10 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   keywords: [
     "metalne žardinjere",
     "žardinjere po meri",
@@ -34,44 +40,59 @@ export const metadata: Metadata = {
     "žardinjere za terasu",
     "žardinjere za dvorište",
     "žardinjere za kancelariju",
+    "žardinjere od pocinkovanog lima",
     "plastifikacija žardinjera",
     "RAL karta",
     "izrada žardinjera",
+    "maske za klima uređaje",
     "NIKOMIL",
   ],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "sr_RS",
-    url: SITE_URL,
+    url: "/",
     siteName: SITE_NAME,
     title: "Metalne žardinjere po meri — NIKOMIL, Beograd",
     description: SITE_DESCRIPTION,
-    images: [
-      {
-        url: "/galerija/metalna-zardinjera-antracit-terasa-restoran.jpg",
-        width: 1600,
-        height: 740,
-        alt: "Metalna žardinjera po meri u antracit boji, NIKOMIL",
-      },
-    ],
   },
-  twitter: { card: "summary_large_image" },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "Metalne žardinjere po meri — NIKOMIL, Beograd",
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  ...(GOOGLE_VERIFICATION && {
+    verification: { google: GOOGLE_VERIFICATION },
+  }),
 };
 
-const orgLd = {
+const businessLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": `${SITE_URL}/#business`,
   name: "NIKOMIL",
+  alternateName: "NIKOMIL žardinjere",
   description: SITE_DESCRIPTION,
   url: SITE_URL,
   telephone: CONTACT.phoneHref,
   email: CONTACT.email,
   foundingDate: String(CONTACT.founded),
-  image: `${SITE_URL}/galerija/metalna-zardinjera-antracit-terasa-restoran.jpg`,
+  image: `${SITE_URL}/opengraph-image.jpg`,
+  logo: `${SITE_URL}/logo.png`,
   priceRange: "$$",
+  currenciesAccepted: "RSD",
+  paymentAccepted: "Gotovina, uplata na račun",
   address: {
     "@type": "PostalAddress",
     streetAddress: CONTACT.street,
@@ -84,16 +105,33 @@ const orgLd = {
     latitude: CONTACT.geo.lat,
     longitude: CONTACT.geo.lng,
   },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "08:00",
+      closes: "18:00",
+    },
+  ],
   areaServed: [
     { "@type": "City", name: "Beograd" },
     { "@type": "Country", name: "Srbija" },
   ],
   knowsAbout: [
     "Metalne žardinjere po meri",
-    "Plastifikacija i farbanje lima",
+    "Žardinjere od pocinkovanog lima",
+    "Plastifikacija i farbanje lima po RAL karti",
     "Mašinska obrada metala",
     "Maske za klima uređaje",
     "Metalne ograde i kapije",
+    "Drvene žardinjere",
   ],
   makesOffer: {
     "@type": "Offer",
@@ -105,13 +143,23 @@ const orgLd = {
   },
 };
 
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  inLanguage: "sr-RS",
+  publisher: { "@id": `${SITE_URL}/#business` },
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sr" className={`${inter.variable} ${archivo.variable}`}>
+    <html lang="sr-RS" className={`${inter.variable} ${archivo.variable}`}>
       <body className="min-h-dvh">
         <a
           href="#sadrzaj"
@@ -122,7 +170,8 @@ export default function RootLayout({
         <Header />
         <main id="sadrzaj">{children}</main>
         <Footer />
-        <JsonLd data={orgLd} />
+        <JsonLd data={businessLd} />
+        <JsonLd data={websiteLd} />
       </body>
     </html>
   );

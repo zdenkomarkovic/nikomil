@@ -79,25 +79,26 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <a
-            href={`tel:${CONTACT.phoneHref}`}
-            className="hidden items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-moss-dark sm:inline-flex"
-          >
-            <PhoneIcon />
-            {CONTACT.phoneDisplay}
-          </a>
+        {/* Dugme za poziv sa brojem — isto na mobilnom i desktopu; na mobilnom stoji
+            centrirano između logoa i meni dugmeta (u navbaru, ne u meniju) */}
+        <a
+          href={`tel:${CONTACT.phoneHref}`}
+          className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-moss-dark"
+          aria-label={`Pozovite ${CONTACT.phoneDisplay}`}
+        >
+          <PhoneIcon />
+          {CONTACT.phoneDisplay}
+        </a>
 
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/20 text-ink md:hidden"
-            aria-label={open ? "Zatvori meni" : "Otvori meni"}
-            aria-expanded={open}
-          >
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink md:hidden"
+          aria-label={open ? "Zatvori meni" : "Otvori meni"}
+          aria-expanded={open}
+        >
+          {open ? <CloseIcon /> : <MenuIcon />}
+        </button>
       </div>
 
       {open ? (
@@ -112,13 +113,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={`tel:${CONTACT.phoneHref}`}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-base font-semibold text-paper"
-            >
-              <PhoneIcon />
-              {CONTACT.phoneDisplay}
-            </a>
           </nav>
         </div>
       ) : null}

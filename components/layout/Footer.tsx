@@ -16,7 +16,7 @@ export function Footer() {
               alt="NIKOMIL — metalne žardinjere po meri"
               width={705}
               height={701}
-              className="h-40 w-40 rounded-md object-cover"
+              className="h-48 w-48 rounded-md object-cover"
             />
             <span className="flex flex-col leading-tight">
               <span className="font-display text-lg font-extrabold tracking-[0.12em] text-ink">
@@ -37,11 +37,6 @@ export function Footer() {
         <nav aria-label="Podnožje — navigacija">
           <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-ink">Stranice</h2>
           <ul className="mt-4 space-y-2 text-sm text-ink-muted">
-            <li>
-              <Link href="/" className="hover:text-ink">
-                Početna
-              </Link>
-            </li>
             {NAV.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-ink">

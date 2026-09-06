@@ -15,9 +15,16 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Stare zasebne stranice su spojene sa početnom
   async redirects() {
     return [
+      // Kanonski domen: www.nikomilbg.com -> nikomilbg.com
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.nikomilbg.com" }],
+        destination: "https://nikomilbg.com/:path*",
+        permanent: true,
+      },
+      // Stare zasebne stranice su spojene sa početnom
       {
         source: "/zardinjere-po-meri",
         destination: "/#zardinjere",

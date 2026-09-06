@@ -27,12 +27,13 @@ export const metadata = buildMetadata({
   title: "Metalne žardinjere po meri u Beogradu",
   description:
     "Izrada metalnih žardinjera po meri od čeličnog lima 2 mm, plastifikacija i farbanje po RAL karti. Za terase, dvorišta i enterijere. Dostava i postavljanje — Beograd i cela Srbija.",
-  url: SITE_URL,
+  url: "/",
 });
 
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": `${SITE_URL}/#faq`,
   mainEntity: FAQ.map((item) => ({
     "@type": "Question",
     name: item.q,
@@ -47,8 +48,14 @@ const productLd = {
   description:
     "Žardinjere od čeličnog lima debljine 2 mm, plastificirane i farbane po RAL karti, izrađene po meri za spoljašnji i unutrašnji prostor.",
   brand: { "@type": "Brand", name: "NIKOMIL" },
+  manufacturer: { "@id": `${SITE_URL}/#business` },
+  category: "Metalne žardinjere",
   material: "Čelični lim 2 mm",
-  image: `${SITE_URL}/galerija/metalne-zardinjere-antracit-dvoriste-ograda.jpg`,
+  image: [
+    `${SITE_URL}/galerija/metalne-zardinjere-antracit-dvoriste-ograda.jpg`,
+    `${SITE_URL}/galerija/bela-metalna-zardinjera-kancelarija.jpg`,
+    `${SITE_URL}/galerija/metalna-zardinjera-po-meri-terasa-kafic.jpg`,
+  ],
   areaServed: "Srbija",
   offers: {
     "@type": "Offer",
@@ -98,7 +105,7 @@ export default function HomePage() {
       ))}
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative isolate overflow-hidden bg-ink text-paper">
+      <section className="relative isolate overflow-hidden  text-paper">
         <Image
           src={HERO_IMAGE}
           alt="Metalna žardinjera po meri u antracit boji, bašta restorana u Beogradu"
@@ -107,22 +114,22 @@ export default function HomePage() {
           sizes="100vw"
           className="-z-10 object-cover opacity-70"
         />
-        <div className="-z-10 absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/50 to-ink/90" />
+        <div className="-z-10 absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink/60" />
 
         <div className="u-container u-reveal py-20 sm:py-28 lg:py-36">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-paper/20 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-paper/80">
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-paper/50 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-white">
             <span className="h-1.5 w-1.5 rounded-full bg-moss" />
             Sremčica, Beograd · od 2015.
           </p>
 
           <h1 className="max-w-3xl text-4xl font-extrabold sm:text-5xl lg:text-6xl">
-            Metalne žardinjere po meri
+            Metalne žardinjere po meri - Nikomil Beograd
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg text-paper/80 sm:text-xl">
-            Projektujemo i izrađujemo žardinjere od čeličnog lima debljine 2 mm —
-            u dimenziji, obliku i boji po RAL karti koje tačno odgovaraju vašem
-            prostoru. Za dvorišta, terase, krovne bašte, lokale i enterijere.
+          <p className="mt-6 max-w-2xl text-lg text-paper sm:text-xl">
+            Projektujemo i izrađujemo žardinjere od čeličnog lima debljine 2 mm — u dimenziji,
+            obliku i boji po RAL karti koje tačno odgovaraju vašem prostoru. Za dvorišta, terase,
+            krovne bašte, lokale i enterijere.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -133,7 +140,7 @@ export default function HomePage() {
               href={`tel:${CONTACT.phoneHref}`}
               size="lg"
               variant="outline"
-              className="border-paper/30 text-paper hover:bg-paper hover:text-ink"
+              className="border-paper/50 text-paper hover:bg-paper hover:text-ink"
             >
               {CONTACT.phoneDisplay}
             </Button>
@@ -141,9 +148,9 @@ export default function HomePage() {
 
           <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
             {HIGHLIGHTS.map((h) => (
-              <div key={h.value} className="border-l border-paper/20 pl-4">
+              <div key={h.value} className="border-l border-paper/40 pl-4">
                 <dt className="font-display text-2xl font-bold text-paper">{h.value}</dt>
-                <dd className="mt-1 text-sm text-paper/70">{h.label}</dd>
+                <dd className="mt-1 text-sm text-paper">{h.label}</dd>
               </div>
             ))}
           </dl>
@@ -170,15 +177,14 @@ export default function HomePage() {
             />
             <div className="u-prose mt-5 text-ink-muted">
               <p>
-                Žardinjere izrađujemo od čeličnog lima debljine 2 mm, što obezbeđuje
-                izuzetnu čvrstinu, stabilnost i otpornost na sve vremenske uslove.
-                Zaštitni sloj i završna obrada — plastifikacija i farbanje po RAL karti —
-                daju zaštitu od korozije i rđe, uz elegantan i moderan izgled koji se
-                lako uklapa u svaki prostor.
+                Žardinjere izrađujemo od čeličnog lima debljine 2 mm, što obezbeđuje izuzetnu
+                čvrstinu, stabilnost i otpornost na sve vremenske uslove. Zaštitni sloj i završna
+                obrada — plastifikacija i farbanje po RAL karti — daju zaštitu od korozije i rđe, uz
+                elegantan i moderan izgled koji se lako uklapa u svaki prostor.
               </p>
               <p>
-                Kombinacijom iskustva, precizne obrade i modernih tehnika isporučujemo
-                proizvode koji spajaju funkcionalnost, dugotrajnost i dizajn.
+                Kombinacijom iskustva, precizne obrade i modernih tehnika isporučujemo proizvode
+                koji spajaju funkcionalnost, dugotrajnost i dizajn.
               </p>
             </div>
             <ul className="mt-7 grid gap-x-6 gap-y-4 sm:grid-cols-2">
@@ -186,9 +192,7 @@ export default function HomePage() {
                 <li key={m.title} className="flex items-start gap-3">
                   <CheckIcon />
                   <span>
-                    <span className="font-display text-sm font-semibold text-ink">
-                      {m.title}
-                    </span>
+                    <span className="font-display text-sm font-semibold text-ink">{m.title}</span>
                     <span className="mt-0.5 block text-sm text-ink-muted">{m.text}</span>
                   </span>
                 </li>
@@ -213,9 +217,7 @@ export default function HomePage() {
                 key={shape.name}
                 className="rounded-2xl border border-line bg-paper p-6 shadow-card"
               >
-                <h3 className="font-display text-lg font-semibold text-ink">
-                  {shape.name}
-                </h3>
+                <h3 className="font-display text-lg font-semibold text-ink">{shape.name}</h3>
                 <p className="mt-2 text-sm text-ink-muted">{shape.description}</p>
               </div>
             ))}
@@ -224,29 +226,22 @@ export default function HomePage() {
                 Dimenzije bez ograničenja
               </h3>
               <p className="mt-2 text-sm text-ink-muted">
-                Od manjih dekorativnih žardinjera do velikih modela za drveće u saksiji
-                i duge pregrade — visinu i dužinu prilagođavamo milimetarski.
+                Od manjih dekorativnih žardinjera do velikih modela za drveće u saksiji i duge
+                pregrade — visinu i dužinu prilagođavamo milimetarski.
               </p>
             </div>
           </div>
 
           <div className="mt-14">
-            <h3 className="font-display text-xl font-semibold text-ink">
-              Boje po RAL karti
-            </h3>
+            <h3 className="font-display text-xl font-semibold text-ink">Boje po RAL karti</h3>
             <p className="mt-2 max-w-2xl text-ink-muted">
-              Boju birate slobodno — od diskretnih tonova koji se stapaju sa prostorom
-              do izražene boje vašeg brenda, u mat ili sjajnoj završnici.
+              Boju birate slobodno — od diskretnih tonova koji se stapaju sa prostorom do izražene
+              boje vašeg brenda, u mat ili sjajnoj završnici.
             </p>
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {RAL_COLORS.map((c) => (
-                <div
-                  key={c.name}
-                  className="rounded-2xl border border-line bg-paper p-5"
-                >
-                  <h4 className="font-display text-base font-semibold text-ink">
-                    {c.name}
-                  </h4>
+                <div key={c.name} className="rounded-2xl border border-line bg-paper p-5">
+                  <h4 className="font-display text-base font-semibold text-ink">{c.name}</h4>
                   <p className="mt-1.5 text-sm text-ink-muted">{c.text}</p>
                 </div>
               ))}
@@ -288,9 +283,7 @@ export default function HomePage() {
                 <span className="font-display text-sm font-bold tracking-widest text-moss-dark">
                   {p.step}
                 </span>
-                <h3 className="mt-2 font-display text-xl font-semibold text-ink">
-                  {p.title}
-                </h3>
+                <h3 className="mt-2 font-display text-xl font-semibold text-ink">{p.title}</h3>
                 <p className="mt-2 text-ink-muted">{p.description}</p>
               </li>
             ))}
@@ -306,8 +299,8 @@ export default function HomePage() {
             title={<span className="text-paper">Kompletno rešenje za žardinjere</span>}
             intro={
               <span className="text-paper/75">
-                Od merenja i proizvodnje, preko dostave, do postavljanja i dekoracije
-                sadnim materijalom na licu mesta.
+                Od merenja i proizvodnje, preko dostave, do postavljanja i dekoracije sadnim
+                materijalom na licu mesta.
               </span>
             }
           />
@@ -317,24 +310,16 @@ export default function HomePage() {
               const img = SERVICE_IMAGES[s.slug];
               const flip = i % 2 === 1;
               return (
-                <article
-                  key={s.slug}
-                  className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14"
-                >
+                <article key={s.slug} className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
                   <div className={flip ? "lg:order-2" : undefined}>
-                    <span className="font-display text-sm font-bold text-moss">
-                      0{i + 1}
-                    </span>
+                    <span className="font-display text-sm font-bold text-moss">0{i + 1}</span>
                     <h3 className="mt-2 font-display text-2xl font-semibold text-paper sm:text-3xl">
                       {s.title}
                     </h3>
                     <p className="mt-3 text-paper/75">{s.short}</p>
                     <ul className="mt-5 space-y-2.5">
                       {s.details.map((d) => (
-                        <li
-                          key={d}
-                          className="flex items-start gap-3 text-sm text-paper/80"
-                        >
+                        <li key={d} className="flex items-start gap-3 text-sm text-paper/80">
                           <span
                             className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-moss text-paper"
                             aria-hidden="true"
@@ -428,10 +413,7 @@ export default function HomePage() {
       {/* ── Zašto NIKOMIL ────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24">
         <div className="u-container">
-          <SectionHeading
-            eyebrow="Zašto NIKOMIL"
-            title="Razlozi zbog kojih nam kupci veruju"
-          />
+          <SectionHeading eyebrow="Zašto NIKOMIL" title="Razlozi zbog kojih nam kupci veruju" />
           <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {WHY_US.map((w) => (
               <div key={w.title}>

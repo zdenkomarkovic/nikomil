@@ -1,19 +1,31 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
+import { GALLERY } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const galleryImages = GALLERY.map((g) => `${SITE_URL}${g.src}`);
 
-  const routes: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
-    { path: "/", priority: 1, changeFrequency: "monthly" },
-    { path: "/galerija", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/kontakt", priority: 0.6, changeFrequency: "yearly" },
+  return [
+    {
+      url: `${SITE_URL}/`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 1,
+      images: galleryImages.slice(0, 12),
+    },
+    {
+      url: `${SITE_URL}/galerija`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      images: galleryImages,
+    },
+    {
+      url: `${SITE_URL}/kontakt`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
   ];
-
-  return routes.map((r) => ({
-    url: `${SITE_URL}${r.path}`,
-    lastModified: now,
-    changeFrequency: r.changeFrequency,
-    priority: r.priority,
-  }));
 }

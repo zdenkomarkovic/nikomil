@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL } from "./constants";
 interface BuildMetadataOptions {
   title?: string;
   description?: string;
-  /** Putanja do slike za OG (relativna od /public ili apsolutna URL) */
+  /** Apsolutna URL slike za OG (ako nije navedena, koristi se app/opengraph-image.jpg) */
   image?: string;
   /** Canonical URL - ako nije naveden, koristi SITE_URL */
   url?: string;
@@ -20,8 +20,10 @@ interface BuildMetadataOptions {
  * Helper za generisanje Next.js Metadata objekta.
  * Koristiti u svakom page.tsx fajlu.
  *
+ * OG slika se podrazumevano preuzima iz app/opengraph-image.jpg (Next konvencija);
+ * prosledi `image` samo ako želiš drugačiju sliku za konkretnu stranicu.
+ *
  * @example
- * // U page.tsx:
  * export const metadata = buildMetadata({
  *   title: "O nama",
  *   description: "Kratki opis stranice",
@@ -37,9 +39,7 @@ export function buildMetadata({
   publishedTime,
 }: BuildMetadataOptions = {}): Metadata {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
-  const canonicalUrl = url ?? SITE_URL;
-  const ogImage =
-    image ?? `${SITE_URL}/galerija/metalna-zardinjera-antracit-terasa-restoran.jpg`;
+  const canonicalUrl = url ?? "/";
 
   return {
     title: { absolute: fullTitle },
@@ -53,22 +53,16 @@ export function buildMetadata({
       description,
       url: canonicalUrl,
       siteName: SITE_NAME,
+      locale: "sr_RS",
       type,
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: fullTitle,
-        },
-      ],
+      ...(image && { images: [{ url: image, width: 1200, height: 630, alt: fullTitle }] }),
       ...(publishedTime && { publishedTime }),
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [ogImage],
+      ...(image && { images: [image] }),
     },
     ...(noIndex && {
       robots: {
