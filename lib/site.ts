@@ -33,8 +33,7 @@ export const SHAPES: { name: string; description: string }[] = [
   },
   {
     name: "Okrugle",
-    description:
-      "Meka, skulpturalna forma za enterijere, recepcije i reprezentativne prostore.",
+    description: "Meka, skulpturalna forma za enterijere, recepcije i reprezentativne prostore.",
   },
   {
     name: "Ovalne",
@@ -121,14 +120,12 @@ export const PROCESS: { step: string; title: string; description: string }[] = [
   {
     step: "01",
     title: "Sečenje",
-    description:
-      "Lim debljine 2 mm sečemo precizno na dimenzije usklađene sa vašim prostorom.",
+    description: "Lim debljine 2 mm sečemo precizno na dimenzije usklađene sa vašim prostorom.",
   },
   {
     step: "02",
     title: "Varenje",
-    description:
-      "Delove zavarujemo u čvrstu, vodonepropusnu konstrukciju bez slabih tačaka.",
+    description: "Delove zavarujemo u čvrstu, vodonepropusnu konstrukciju bez slabih tačaka.",
   },
   {
     step: "03",
@@ -149,8 +146,7 @@ export const PROCESS: { step: string; title: string; description: string }[] = [
   {
     step: "06",
     title: "Farbanje po RAL karti",
-    description:
-      "Završni sloj u nijansi po vašem izboru — mat ili sjaj, unutra i spolja.",
+    description: "Završni sloj u nijansi po vašem izboru — mat ili sjaj, unutra i spolja.",
   },
 ];
 
@@ -202,8 +198,7 @@ export const SERVICES: {
 export const OTHER_PRODUCTS: { name: string; description: string }[] = [
   {
     name: "Maske za klima uređaje",
-    description:
-      "Diskretno sakrivaju spoljne jedinice i uklapaju se u fasadu i enterijer.",
+    description: "Diskretno sakrivaju spoljne jedinice i uklapaju se u fasadu i enterijer.",
   },
   {
     name: "Police",
@@ -216,8 +211,7 @@ export const OTHER_PRODUCTS: { name: string; description: string }[] = [
   },
   {
     name: "Ograde",
-    description:
-      "Moderne i klasične ograde, izrađene s posebnom pažnjom prema detalju.",
+    description: "Moderne i klasične ograde, izrađene s posebnom pažnjom prema detalju.",
   },
   {
     name: "Drvene žardinjere",
@@ -260,8 +254,7 @@ export const WHY_US: { title: string; description: string }[] = [
   },
   {
     title: "Cela Srbija",
-    description:
-      "Dostava na teritoriji Beograda i slanje kurirskom službom u ostatak zemlje.",
+    description: "Dostava na teritoriji Beograda i slanje kurirskom službom u ostatak zemlje.",
   },
 ];
 
@@ -375,8 +368,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "metalne-zardinjere-za-ogradu-terase-simsir.jpg",
-    "Metalne žardinjere sa šimširom postavljene na zid terase",
-    "terasa"
+    "Visoka bela metalna žardinjera sa sobnim biljem uz prozor kancelarije",
+    "enterijer"
   ),
   g(
     "zardinjere-na-ogradi-terase-sive.jpg",
@@ -385,13 +378,13 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "zardinjere-terasa-pogled-hram-svetog-save.jpg",
-    "Metalne žardinjere na terasi sa pogledom na Hram Svetog Save",
-    "terasa"
+    "Bela metalna žardinjera kao pregrada pored police u kancelariji",
+    "enterijer"
   ),
   g(
     "metalne-zardinjere-tuje-krovna-terasa.jpg",
-    "Kvadratne metalne žardinjere sa tujama na krovnoj terasi",
-    "terasa"
+    "Visoka bela metalna žardinjera sa zelenilom uz prozor kancelarije",
+    "enterijer"
   ),
   g(
     "zardinjera-na-ogradi-terase-zacinsko-bilje.jpg",
@@ -400,8 +393,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "zardinjere-antracit-ispred-lokala-beograd.jpg",
-    "Dve antracit metalne žardinjere ispred poslovnog lokala",
-    "ulica"
+    "Antracit metalna žardinjera sa bambusom na natkrivenoj terasi stana",
+    "terasa"
   ),
   g(
     "izrada-metalnih-zardinjera-pocinkovani-lim.jpg",
@@ -420,8 +413,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "sadnja-zelenila-u-metalne-zardinjere.jpg",
-    "Sadnja žbunja i zelenila u crne metalne žardinjere u dvorištu",
-    "proizvodnja"
+    "Metalne police od crnog profila sa OSB pločama u magacinu",
+    "ostalo"
   ),
   g(
     "bela-metalna-zardinjera-kancelarija.jpg",
@@ -480,23 +473,23 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "metalna-ograda-antracit-sa-zardinjerama.jpg",
-    "Metalna ograda u antracit boji sa pratećim žardinjerama i veštačkom travom",
-    "ostalo"
+    "Dve antracit metalne žardinjere na balkonu sa staklenom ogradom",
+    "terasa"
   ),
   g(
     "metalne-police-crni-celicni-profil.jpg",
-    "Metalne police od crnog čeličnog profila sa OSB pločama",
-    "ostalo"
+    "Antracit metalna žardinjera sa lovorom na terasi, pogled na Hram Svetog Save",
+    "terasa"
   ),
   g(
     "sto-sa-metalnim-nogama-i-drvenom-plocom.jpg",
-    "Sto sa crnim metalnim nogama i drvenom pločom u kuhinji",
-    "ostalo"
+    "Velika ugradna antracit metalna žardinjera sa lavandom i drvetom",
+    "enterijer"
   ),
   g(
     "zardinjera-za-drvo-u-kaficu-okrugli-sto.jpg",
     "Okrugli sto sa ugrađenom metalnom žardinjerom za drvo u kafiću",
-    "ostalo"
+    "enterijer"
   ),
   g(
     "zardinjere-krovna-terasa-hram-svetog-save.jpg",
@@ -510,13 +503,13 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "zardinjera-antracit-ulica-krotoni-beograd.jpg",
-    "Duga antracit žardinjera sa krotonima na ulici u Beogradu",
-    "ulica"
+    "Bela metalna žardinjera sa sobnim biljem ispred zelenog zida u kancelariji",
+    "enterijer"
   ),
   g(
     "bela-zardinjera-kancelarija-zeleni-zid.jpg",
-    "Bela metalna žardinjera ispred zelenog zida u kancelariji",
-    "enterijer"
+    "Antracit metalne žardinjere na krovnoj terasi sa pogledom na Hram Svetog Save",
+    "terasa"
   ),
   g(
     "bela-zardinjera-pregrada-izmedju-stolova.jpg",
@@ -535,8 +528,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "sadnja-lovora-u-crne-metalne-zardinjere.jpg",
-    "Sadnja lovora u crne metalne žardinjere u dvorištu",
-    "proizvodnja"
+    "Antracit metalne žardinjere sa krotonima na trotoaru u Beogradu, ispred lokala",
+    "ulica"
   ),
   g(
     "ugaone-zardinjere-krovna-terasa-pogled-grad.jpg",
@@ -555,8 +548,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "zardinjere-terasa-staklena-ograda-pogled.jpg",
-    "Metalne žardinjere na terasi uz staklenu ogradu sa pogledom na grad",
-    "terasa"
+    "Sto sa crnim metalnim nogama i drvenom pločom u kuhinji",
+    "ostalo"
   ),
   g(
     "prozorske-zardinjere-antracit-simsir-balkon.jpg",
@@ -590,8 +583,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "crne-zardinjere-brsljan-terasa-hram-save.jpg",
-    "Crne metalne žardinjere sa bršljanom na terasi, pogled na Hram Svetog Save",
-    "terasa"
+    "Crne metalne žardinjere sa zelenilom u enterijeru, pogled na Hram Svetog Save",
+    "enterijer"
   ),
   g(
     "zardinjere-krovna-terasa-drveni-pod-pogled.jpg",
@@ -610,8 +603,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "krovna-terasa-lounge-crne-zardinjere-hram.jpg",
-    "Lounge na krovnoj terasi sa crnim žardinjerama i pogledom na Hram Svetog Save",
-    "terasa"
+    "Crne metalne žardinjere u lounge enterijeru sa pogledom na Hram Svetog Save",
+    "enterijer"
   ),
   g(
     "ugaone-zardinjere-krovna-terasa-vedro-nebo.jpg",
@@ -650,8 +643,8 @@ export const GALLERY: GalleryImage[] = [
   ),
   g(
     "crna-zardinjera-ispred-kafe-radnje.jpg",
-    "Crna metalna žardinjera sa krotonom ispred kafe radnje",
-    "ulica"
+    "Antracit metalne žardinjere na veštačkoj travi uz ogradu u dvorištu",
+    "terasa"
   ),
   g(
     "bela-kockasta-zardinjera-ugao-kancelarije.jpg",

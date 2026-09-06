@@ -269,6 +269,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Vaša ideja ──────────────────────────────────────────────────── */}
+      <section className="border-y border-moss/15 bg-moss-tint py-14 sm:py-20">
+        <div className="u-container max-w-3xl text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss-dark">
+            Po meri, bez ograničenja
+          </p>
+          <h2 className="text-3xl text-ink sm:text-4xl">Vi imate ideju — mi je pravimo</h2>
+          <p className="mt-4 text-lg leading-relaxed text-ink-muted">
+            Skica na papiru, fotografija sa interneta ili samo slika u glavi — dovoljno je
+            da krenemo. Žardinjeru izrađujemo tačno po vašoj zamisli: dimenzije, oblik i
+            boja po RAL karti. Ako se pravi od lima, napravićemo.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button href="/kontakt" size="lg">
+              Pošaljite nam ideju
+            </Button>
+            <Button
+              href={`tel:${CONTACT.phoneHref}`}
+              size="lg"
+              variant="outline"
+            >
+              {CONTACT.phoneDisplay}
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* ── Proces izrade ────────────────────────────────────────────────── */}
       <section className="bg-paper-dim py-16 sm:py-24">
         <div className="u-container">
