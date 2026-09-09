@@ -258,6 +258,37 @@ export const WHY_US: { title: string; description: string }[] = [
   },
 ];
 
+// ─── Utisci klijenata ───────────────────────────────────────────────────────
+export const TESTIMONIALS: { quote: string; name: string; company: string }[] = [
+  {
+    quote:
+      "Kao firma koja često uređuje poslovne komplekse i stambene projekte, važno nam je da partneri isporučuju kvalitetna i dugotrajna rešenja. Žardinjere od pocinkovanog lima debljine 2 mm pokazale su se kao pouzdane i estetski besprekorne. Sarađivali smo na više projekata i uvek smo dobili maksimalnu podršku i prilagođena rešenja.",
+    name: "Vesna Lazić",
+    company: "Granit Invest",
+  },
+  {
+    quote:
+      "Naša kompanija se bavi uređenjem zelenih površina i dugo smo tragali za partnerom koji može da isporuči žardinjere vrhunskog kvaliteta. Žardinjere izrađene od pocinkovanog lima debljine 2 mm pokazale su se kao idealno rešenje – stabilne su, otporne na vremenske uslove i izgledaju moderno. Zadovoljni smo kako kvalitetom, tako i profesionalnim odnosom tokom cele saradnje.",
+    name: "Radovan Popović",
+    company: "Ever Green",
+  },
+  {
+    quote:
+      "Želeli smo da unapredimo izgled naše bašte i odlučili smo se za metalne žardinjere po meri. Rezultat je prevazišao očekivanja – prostor sada izgleda moderno i atraktivno, a gosti nam često hvale novi ambijent. Posebno nam je značilo što smo mogli da biramo dimenzije i boju kako bi se savršeno uklopile u enterijer i eksterijer kafića.",
+    name: "Perica Stančevski",
+    company: "Java kafić",
+  },
+];
+
+// ─── Logoi firmi za koje smo radili ─────────────────────────────────────────
+export const CLIENT_LOGOS: { src: string; name: string }[] = [
+  { src: "/partneri/granit-invest.png", name: "Granit Invest" },
+  { src: "/partneri/ever-green.png", name: "Ever Green" },
+  { src: "/partneri/java-coffee.png", name: "Java Coffee" },
+  { src: "/partneri/hilton-belgrade.png", name: "Hilton Belgrade" },
+  { src: "/partneri/rajiceva-shopping-center.png", name: "Rajićeva Shopping Center" },
+];
+
 // ─── Česta pitanja ───────────────────────────────────────────────────────────
 export const FAQ: { q: string; a: string }[] = [
   {

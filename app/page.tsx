@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Faq } from "@/components/sections/Faq";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -455,8 +456,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Utisci klijenata ─────────────────────────────────────────────── */}
+      <Testimonials />
+
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <section className="bg-paper-dim py-16 sm:py-24">
+      <section className="py-16 sm:py-24">
         <div className="u-container max-w-3xl">
           <SectionHeading eyebrow="Česta pitanja" title="Sve što kupci najčešće pitaju" />
           <div className="mt-10">
