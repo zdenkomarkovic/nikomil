@@ -358,6 +358,31 @@ const g = (src: string, alt: string, category: GalleryCategory): GalleryImage =>
 
 export const GALLERY: GalleryImage[] = [
   g(
+    "antracit-zardinjere-duz-trema-vile-sa-lukovima.jpg",
+    "Antracit metalne žardinjere po meri duž trema vile sa kamenim lukovima",
+    "terasa"
+  ),
+  g(
+    "zardinjere-ukrasna-trava-muskatle-trem-vile.jpg",
+    "Metalna žardinjera sa ukrasnom travom i crvenim muškatlama na tremu vile",
+    "terasa"
+  ),
+  g(
+    "zardinjere-trem-pogled-na-kapelu-sa-kupolom.jpg",
+    "Metalne žardinjere na tremu dvorišta sa pogledom na kapelu sa kupolom",
+    "terasa"
+  ),
+  g(
+    "niz-antracit-zardinjera-duz-trema-vile.jpg",
+    "Dug niz antracit metalnih žardinjera po meri duž trema vile",
+    "terasa"
+  ),
+  g(
+    "antracit-zardinjere-fasada-vile-dvoriste.jpg",
+    "Antracit metalne žardinjere po meri uz fasadu vile u dvorištu",
+    "terasa"
+  ),
+  g(
     "metalna-zardinjera-antracit-terasa-restoran.jpg",
     "Antracit metalna žardinjera po meri sa lovorom, bašta restorana u Beogradu",
     "ulica"
