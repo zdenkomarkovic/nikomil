@@ -58,17 +58,6 @@ const productLd = {
     `${SITE_URL}/galerija/metalna-zardinjera-po-meri-terasa-kafic.jpg`,
   ],
   areaServed: "Srbija",
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    priceCurrency: "RSD",
-    price: "0",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Cena se formira po meri — na osnovu dimenzija, oblika i boje.",
-    },
-    seller: { "@type": "Organization", name: "NIKOMIL" },
-  },
 };
 
 const servicesLd = SERVICES.map((s) => ({
